@@ -10,4 +10,5 @@ doctype_js = {
     "Lead"           : "public/js/sms_button.js",
     "Contact"        : "public/js/sms_button.js",
     "Customer"       : "public/js/sms_button.js",
+    "Opportunity"    : "public/js/sms_button.js",
 }

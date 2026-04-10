@@ -8,6 +8,8 @@ function get_phone(frm) {
         return frm.doc.contact_mobile || frm.doc.contact_phone || '';
     } else if (dt === 'Sales Invoice') {
         return frm.doc.contact_mobile || frm.doc.customer_phone_number || '';
+    } else if (dt === 'Opportunity') {
+        return frm.doc.contact_mobile || frm.doc.phone || '';
     }
     return '';
 }
@@ -149,7 +151,7 @@ function show_call_dialog(frm) {
     d.show();
 }
 
-['Sales Invoice', 'Sales Order', 'Lead', 'Contact', 'Customer'].forEach(dt => {
+['Sales Invoice', 'Sales Order', 'Lead', 'Contact', 'Customer', 'Opportunity'].forEach(dt => {
     frappe.ui.form.on(dt, {
         refresh(frm) {
             frm.page.add_menu_item(__('Send SMS'), () => show_sms_dialog(frm));
